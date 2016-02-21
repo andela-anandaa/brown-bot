@@ -24,4 +24,7 @@ if command == 'refresh-db':
     print "[status] Tables created"
 
     botjr.add_users_from_channel()
+
+
+if command == 'populate-brownbag':
     botjr.create_dummy_presenters()
