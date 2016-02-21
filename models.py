@@ -41,12 +41,15 @@ def create_tables():
     '''
     Base.metadata.create_all(engine)
 
-def create_user(**kwargs):
+def create_session():
     DBSession = sessionmaker(bind=engine)
-    session = DBSession()
+    return DBSession()
+
+def create_user(**kwargs):
+    session = create_session()
 
     user = User(**kwargs)
     session.add(user)
     session.commit()
-    
+
     return user
