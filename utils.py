@@ -24,3 +24,4 @@ if command == 'refresh-db':
     print "[status] Tables created"
 
     botjr.add_users_from_channel()
+    botjr.create_dummy_presenters()
