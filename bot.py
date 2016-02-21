@@ -3,11 +3,8 @@ from slackbot.bot import respond_to, listen_to
 import botjr
 import re
 
-
-def main():	
+def main():
 	bot = Bot()
-	# retrieve members in brown-bag-channel
-	members = botjr.get_members_in_the_nairobi_brown_bag_channel()
 	bot.run()
 
 @respond_to('sup', re.IGNORECASE)
@@ -25,9 +22,6 @@ def hi(message):
 def brown_bag(message):
     message.reply('yoooo yadoi yadi')
 
-# @listen_to('sup', re.IGNORECASE)
-# def brown_bag(message):
-#     message.reply('Hey PUNK!!! Back off')
 
 if __name__ == "__main__":
     print "==> I'm Up"

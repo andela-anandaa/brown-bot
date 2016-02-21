@@ -12,6 +12,7 @@ class User(Base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     slackid = Column(String(100))
+    username = Column(String(100))
     first_name = Column(String(100), nullable=False)
     last_name = Column(String(100), nullable=False)
     email = Column(String(100), nullable=False)
@@ -47,5 +48,5 @@ def create_user(**kwargs):
     user = User(**kwargs)
     session.add(user)
     session.commit()
-
+    
     return user
