@@ -1,6 +1,6 @@
 import datetime
 
-from sqlalchemy import Column, ForeignKey, Integer, String, Date, DateTime
+from sqlalchemy import Column, ForeignKey, Integer, String, Date, DateTime, func
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
@@ -53,3 +53,13 @@ def create_user(**kwargs):
     session.commit()
 
     return user
+
+def create_presenter(**kwargs):
+    DBSession = sessionmaker(bind=engine)
+    session = DBSession()
+    presenter = BrownBag(**kwargs)
+    session.add(presenter)
+    session.commit()
+    return presenter    
+
+# import ipdb; ipdb.set_trace()

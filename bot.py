@@ -9,9 +9,11 @@ import bot_methods as bm
 
 slack = Slacker('xoxb-22328931106-tACwqKP1LwOuwfvGcYD9qHyP')
 
+
 def main():
-	bot = Bot()
-	bot.run()
+    bot = Bot()
+    botjr.alert_presenter()
+    bot.run()
 
 @respond_to('sup', re.IGNORECASE)
 @listen_to('sup', re.IGNORECASE)
